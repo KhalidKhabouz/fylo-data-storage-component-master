@@ -15,6 +15,7 @@
   --grayish-blue: hsl(229, 7%, 55%);
   --dark-blue: hsl(228, 56%, 26%);
   --very-dark-blue: hsl(229, 57%, 11%);
+  --box-shadow: 0 1px 30px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -25,10 +26,16 @@ body {
   background-color: var(--very-dark-blue);
 }
 
+h1 {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 18.0625rem 1rem 19.375rem;
+  padding: 18.0625rem 0 19.375rem;
   max-width: 57.5rem;
   margin: auto;
 }
@@ -52,6 +59,7 @@ body {
   padding: 2.5rem 2.5625rem;
   border-radius: 10px;
   border-top-right-radius: 100px;
+  box-shadow: var(--box-shadow);
 }
 
 .component-icons ul {
@@ -84,6 +92,7 @@ body {
   display: flex;
   align-self: flex-end;
   width: 33.75rem;
+  box-shadow: var(--box-shadow);
 }
 
 .space-left {
@@ -196,6 +205,13 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+@media (max-width: 960px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (max-width: 41.25rem) {
