@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   /* Colors */
   /* Primary */
@@ -10,5 +18,260 @@
 }
 
 body {
-  background-color: aqua;
+  font-family: "Raleway", sans-serif;
+  background-image: url("../images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: var(--very-dark-blue);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 18.0625rem 1rem 19.375rem;
+  max-width: 57.5rem;
+  margin: auto;
+}
+
+.data-storage-component {
+  position: relative;
+  display: flex;
+  column-gap: 1.875rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.component-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 1.8125rem;
+  width: 21.875rem;
+  background-color: var(--dark-blue);
+  padding: 2.5rem 2.5625rem;
+  border-radius: 10px;
+  border-top-right-radius: 100px;
+}
+
+.component-icons ul {
+  list-style: none;
+  display: flex;
+  column-gap: 1rem;
+}
+
+.component-icons li {
+  height: 3rem;
+}
+
+.component-icons a {
+  background-color: var(--very-dark-blue);
+  display: flex;
+  font-size: 0.5rem;
+  width: 3rem;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.component-icons img {
+  width: fit-content;
+  height: min-content;
+}
+
+.component-stats {
+  display: flex;
+  align-self: flex-end;
+  width: 33.75rem;
+}
+
+.space-left {
+  position: absolute;
+  right: 2.5rem;
+  top: -2.9375rem;
+  width: 11.1875rem;
+  display: flex;
+  align-items: center;
+  column-gap: 0.6875rem;
+  padding: 0.8125rem 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+}
+
+.space-left p {
+  font-size: 2.4375rem;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+}
+
+.space-left .space-unit {
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--grayish-blue);
+  padding-top: .25rem;
+  word-spacing: .125rem;
+}
+
+.space-left .triangle {
+  position: absolute;
+  bottom: -22px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 1.375rem solid white;
+  border-left: 1.375rem solid transparent;
+}
+
+.capacity-range {
+  position: relative;
+  width: 100%;
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  padding: 2.5rem;
+}
+
+/* Range Slider component start */
+
+.range-description {
+  color: var(--pale-blue);
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.slider-background {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #151d4b;
+  height: 1.25rem;
+  width: 28.6875rem;
+  width: calc(100% - 1px);
+  border-radius: 50px;
+  padding: 0 0.1875rem;
+  margin-bottom: 0.4375rem;
+}
+
+.progress-bar {
+  position: relative;
+  height: 0.875rem;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  width: 75%;
+  border-radius: 50px;
+}
+
+.progress-bar .pointer-ajustement {
+  position: absolute;
+  right: .125rem;
+  top: .125rem;
+  bottom: .125rem;
+  border-radius: 50%;
+  height: .675rem;
+  width: .675rem;
+  background-color: white;
+}
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--pale-blue);
+  font-weight: 700;
+}
+
+/* Range Slider component end */
+
+footer {
+  position: relative;
+}
+
+.attribution {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 41.25rem) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .data-storage-component {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.25rem;
+  }
+
+  .component-actions {
+    width: 100%;
+  }
+  .component-stats {
+    width: 100%;
+  }
+}
+
+@media (max-width: 23.4375rem) {
+  body {
+    background-image: url("../images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 100vh;
+  }
+
+  .container {
+    padding: 7.9375rem 1.5rem 7.9375rem 1.5625rem;
+  }
+
+  .data-storage-component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 20.375rem;
+  }
+
+  .component-actions {
+    width: 100%;
+  }
+
+  .component-stats {
+    width: 100%;
+  }
+
+  .capacity-range {
+    padding: 2rem 1.9375rem 3.25rem 2rem;
+  }
+
+  .range-description {
+    text-align: center;
+  }
+
+  .slider-background {
+    margin-bottom: 0.5625rem;
+  }
+
+  .progress-bar {
+    width: calc(75% + 1px);
+  }
+
+  .space-left {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: initial;
+    bottom: -2.25rem;
+    border-bottom-right-radius: 8px;
+  }
+
+  .triangle {
+    display: none;
+  }
 }
