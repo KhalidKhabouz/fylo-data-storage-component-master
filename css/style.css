@@ -23,6 +23,8 @@ body {
   background-image: url("../images/bg-desktop.png");
   background-repeat: no-repeat;
   background-position: center bottom;
+  background-size: 100% 50%;
+  min-height: 100vh;
   background-color: var(--very-dark-blue);
 }
 
@@ -117,11 +119,11 @@ h1 {
 
 .space-left .space-unit {
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--grayish-blue);
-  padding-top: .25rem;
-  word-spacing: .125rem;
+  padding-top: 0.25rem;
+  word-spacing: 0.125rem;
 }
 
 .space-left .triangle {
@@ -177,12 +179,12 @@ h1 {
 
 .progress-bar .pointer-ajustement {
   position: absolute;
-  right: .125rem;
-  top: .125rem;
-  bottom: .125rem;
+  right: 0.125rem;
+  top: 0.125rem;
+  bottom: 0.125rem;
   border-radius: 50%;
-  height: .675rem;
-  width: .675rem;
+  height: 0.675rem;
+  width: 0.675rem;
   background-color: white;
 }
 
@@ -215,6 +217,13 @@ footer {
 }
 
 @media (max-width: 41.25rem) {
+
+  body {
+    background-image: url("../images/bg-mobile.png");
+    background-size: cover;
+    background-position: bottom;
+  }
+
   .container {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -223,7 +232,7 @@ footer {
   .data-storage-component {
     display: flex;
     flex-direction: column;
-    row-gap: 3.25rem;
+    row-gap: 1rem;
   }
 
   .component-actions {
@@ -232,13 +241,24 @@ footer {
   .component-stats {
     width: 100%;
   }
+
+  .space-left {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: initial;
+    bottom: -2.25rem;
+    border-bottom-right-radius: 8px;
+  }
+
+  .triangle {
+    display: none;
+  }
 }
 
 @media (max-width: 23.4375rem) {
+
   body {
-    background-image: url("../images/bg-mobile.png");
-    background-repeat: no-repeat;
-    background-position: left bottom;
     height: 100vh;
   }
 
@@ -247,10 +267,6 @@ footer {
   }
 
   .data-storage-component {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
     width: 20.375rem;
   }
 
@@ -276,18 +292,5 @@ footer {
 
   .progress-bar {
     width: calc(75% + 1px);
-  }
-
-  .space-left {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    top: initial;
-    bottom: -2.25rem;
-    border-bottom-right-radius: 8px;
-  }
-
-  .triangle {
-    display: none;
   }
 }
